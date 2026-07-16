@@ -97,21 +97,21 @@ export default function Pricing() {
                 </span>
               </div>
 
-              <div style={{ marginBottom: '8px' }}>
+              <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'baseline', flexWrap: 'wrap' }}>
                 <span style={{
                   fontSize: '48px',
                   fontWeight: 800,
                   fontFamily: 'Syne, sans-serif',
                   background: plan.popular
                     ? 'linear-gradient(135deg, #7c3aed, #3b82f6)'
-                    : 'white',
+                    : 'none',
                   WebkitBackgroundClip: plan.popular ? 'text' : 'unset',
                   WebkitTextFillColor: plan.popular ? 'transparent' : 'white',
                   color: plan.popular ? 'transparent' : 'white',
                 }}>
                   {plan.price}
                 </span>
-                <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '14px', marginLeft: '4px', fontFamily: 'Outfit,sans-serif' }}>
+                <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '14px', marginLeft: '6px', fontFamily: 'Outfit,sans-serif', whiteSpace: 'nowrap' }}>
                   /{plan.period}
                 </span>
               </div>

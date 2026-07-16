@@ -131,7 +131,7 @@ function OverviewPanel({ projects }) {
         Quick Actions
       </h3>
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-        <a href="/" target="_blank" className="btn-secondary" style={{ fontSize: '13px', padding: '10px 18px', textDecoration: 'none' }}>
+        <a href={import.meta.env.BASE_URL} target="_blank" className="btn-secondary" style={{ fontSize: '13px', padding: '10px 18px', textDecoration: 'none' }}>
           <FiExternalLink size={14} /> View Portfolio
         </a>
         <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ fontSize: '13px', padding: '10px 18px', textDecoration: 'none', color: '#25d366', borderColor: 'rgba(37,211,102,0.3)' }}>

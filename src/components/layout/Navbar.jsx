@@ -14,13 +14,13 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const settings = getSiteSettings();
-const WHATSAPP_URL = `https://wa.me/${settings.whatsapp}?text=Hi DigiMantra, I need a website!`;
-const CALL_URL = `tel:+${settings.whatsapp}`;
-const EMAIL_URL = `mailto:${settings.email}`;
-const INSTAGRAM_URL = settings.instagram;
-
 export default function Navbar() {
+  const settings = getSiteSettings();
+  const WHATSAPP_URL = `https://wa.me/${settings.whatsapp}?text=Hi DigiMantra, I need a website!`;
+  const CALL_URL = `tel:+${settings.whatsapp}`;
+  const EMAIL_URL = `mailto:${settings.email}`;
+  const INSTAGRAM_URL = settings.instagram;
+
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);

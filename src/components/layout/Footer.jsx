@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowUp, FiInstagram, FiMail, FiPhone } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import { getSiteSettings } from '../../data/defaultSettings';
 
 const footerLinks = {
   services: [
@@ -20,6 +21,7 @@ const footerLinks = {
 
 export default function Footer() {
   const navigate = useNavigate();
+  const s = getSiteSettings();
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   const scrollToSection = (href) => {
@@ -75,10 +77,10 @@ export default function Footer() {
             {/* Social */}
             <div style={{ display: 'flex', gap: '12px' }}>
               {[
-                { icon: <FaWhatsapp size={18} />, href: 'https://wa.me/919999999999', color: '#25d366', label: 'WhatsApp' },
-                { icon: <FiInstagram size={18} />, href: 'https://instagram.com/digimantra.in', color: '#e1306c', label: 'Instagram' },
-                { icon: <FiMail size={18} />, href: 'mailto:hello@digimantra.in', color: '#a78bfa', label: 'Email' },
-                { icon: <FiPhone size={18} />, href: 'tel:+919999999999', color: '#06b6d4', label: 'Phone' },
+                { icon: <FaWhatsapp size={18} />, href: `https://wa.me/${s.whatsapp}`, color: '#25d366', label: 'WhatsApp' },
+                { icon: <FiInstagram size={18} />, href: s.instagram, color: '#e1306c', label: 'Instagram' },
+                { icon: <FiMail size={18} />, href: `mailto:${s.email}`, color: '#a78bfa', label: 'Email' },
+                { icon: <FiPhone size={18} />, href: `tel:+${s.whatsapp}`, color: '#06b6d4', label: 'Phone' },
               ].map((s) => (
                 <a
                   key={s.label}

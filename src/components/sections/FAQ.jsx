@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { faqs } from '../../data/siteData';
+import { getSiteSettings } from '../../data/defaultSettings';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 
 function FAQItem({ faq, isOpen, onToggle }) {
@@ -80,6 +81,7 @@ function FAQItem({ faq, isOpen, onToggle }) {
 export default function FAQ() {
   const [openId, setOpenId] = useState(1);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { whatsapp, email } = getSiteSettings();
 
   const [localFaqs] = useState(() => {
     const saved = localStorage.getItem('dm_faqs');
@@ -106,7 +108,7 @@ export default function FAQ() {
             </p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <a
-                href="https://wa.me/919999999999?text=Hi DigiMantra, I have a question!"
+                href={`https://wa.me/${whatsapp}?text=Hi DigiMantra, I have a question!`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -130,7 +132,7 @@ export default function FAQ() {
                 💬 Chat on WhatsApp
               </a>
               <a
-                href="mailto:hello@digimantra.in"
+                href={`mailto:${email}`}
                 style={{
                   display: 'flex',
                   alignItems: 'center',

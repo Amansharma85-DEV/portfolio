@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { FiPhone, FiMail, FiX } from 'react-icons/fi';
+import { getSiteSettings } from '../../data/defaultSettings';
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
@@ -13,10 +14,11 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const WHATSAPP_URL = 'https://wa.me/919999999999?text=Hi DigiMantra, I need a website!';
-const CALL_URL = 'tel:+919999999999';
-const EMAIL_URL = 'mailto:hello@digimantra.com';
-const INSTAGRAM_URL = 'https://instagram.com/digimantra';
+const settings = getSiteSettings();
+const WHATSAPP_URL = `https://wa.me/${settings.whatsapp}?text=Hi DigiMantra, I need a website!`;
+const CALL_URL = `tel:+${settings.whatsapp}`;
+const EMAIL_URL = `mailto:${settings.email}`;
+const INSTAGRAM_URL = settings.instagram;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

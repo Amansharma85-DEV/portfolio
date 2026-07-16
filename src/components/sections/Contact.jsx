@@ -4,12 +4,14 @@ import { useInView } from 'react-intersection-observer';
 import toast from 'react-hot-toast';
 import { FiSend, FiMapPin, FiMail, FiInstagram } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import { getSiteSettings } from '../../data/defaultSettings';
 
 const budgetOptions = [
   'Under ₹5,000', '₹5,000 - ₹10,000', '₹10,000 - ₹20,000', 'Above ₹20,000',
 ];
 
 export default function Contact() {
+  const s = getSiteSettings();
   const [formData, setFormData] = useState({
     name: '', business: '', phone: '', email: '', project: '', budget: '',
   });
@@ -31,6 +33,7 @@ export default function Contact() {
   };
 
   const waMessage = `Hi DigiMantra! 👋\nName: ${formData.name || 'Your Name'}\nBusiness: ${formData.business || 'Business Name'}\nProject: ${formData.project || 'Tell us about your project'}`;
+  const waHref = `https://wa.me/${s.whatsapp}?text=${encodeURIComponent(waMessage)}`;
 
   return (
     <section id="contact" style={{ padding: '100px 0', background: 'rgba(255,255,255,0.01)' }}>
@@ -156,7 +159,7 @@ export default function Contact() {
                   )}
                 </button>
                 <a
-                  href={`https://wa.me/919999999999?text=${encodeURIComponent(waMessage)}`}
+                  href={waHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -204,10 +207,10 @@ export default function Contact() {
             {/* Contact Links */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
               {[
-                { icon: <FaWhatsapp size={18} />, label: 'WhatsApp', value: '+91 9999 999 999', href: 'https://wa.me/919999999999', color: '#25d366' },
-                { icon: <FiMail size={18} />, label: 'Email', value: 'hello@digimantra.in', href: 'mailto:hello@digimantra.in', color: '#a78bfa' },
-                { icon: <FiInstagram size={18} />, label: 'Instagram', value: '@digimantra.in', href: 'https://instagram.com/digimantra.in', color: '#e1306c' },
-                { icon: <FiMapPin size={18} />, label: 'Location', value: 'Delhi, India', href: '#', color: '#06b6d4' },
+                { icon: <FaWhatsapp size={18} />, label: 'WhatsApp', value: s.phone, href: `https://wa.me/${s.whatsapp}`, color: '#25d366' },
+                { icon: <FiMail size={18} />, label: 'Email', value: s.email, href: `mailto:${s.email}`, color: '#a78bfa' },
+                { icon: <FiInstagram size={18} />, label: 'Instagram', value: s.instagram.replace('https://instagram.com/', '@'), href: s.instagram, color: '#e1306c' },
+                { icon: <FiMapPin size={18} />, label: 'Location', value: s.location, href: '#', color: '#06b6d4' },
               ].map((item) => (
                 <a
                   key={item.label}

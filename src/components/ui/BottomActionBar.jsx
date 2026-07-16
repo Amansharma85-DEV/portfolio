@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiHome, FiBriefcase, FiGrid, FiPhone } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import { getSiteSettings } from '../../data/defaultSettings';
+
+const { whatsapp } = getSiteSettings();
 
 const tabs = [
   { id: 'hero', label: 'Home', icon: FiHome, href: '#hero', type: 'scroll' },
   { id: 'work', label: 'Portfolio', icon: FiBriefcase, href: '#work', type: 'scroll' },
   { id: 'services', label: 'Services', icon: FiGrid, href: '#services', type: 'scroll' },
   { id: 'contact', label: 'Contact', icon: FiPhone, href: '#contact', type: 'scroll' },
-  { id: 'whatsapp', label: 'WhatsApp', icon: FaWhatsapp, href: 'https://wa.me/919999999999?text=Hi DigiMantra, I need a website!', type: 'link' },
+  { id: 'whatsapp', label: 'WhatsApp', icon: FaWhatsapp, href: `https://wa.me/${whatsapp}?text=Hi DigiMantra, I need a website!`, type: 'link' },
 ];
 
 export default function BottomActionBar() {

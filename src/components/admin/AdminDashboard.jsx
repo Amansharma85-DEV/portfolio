@@ -409,14 +409,20 @@ function GenericManager({ title, items, setItems, fields, emptyItem }) {
 
 // --- Settings Panel ---
 function SettingsPanel() {
-  const [settings, setSettings] = useState({
-    siteName: 'DigiMantra',
-    tagline: 'Building Websites That Grow Businesses.',
-    phone: '+91 9999 999 999',
-    email: 'hello@digimantra.in',
-    instagram: '@digimantra.in',
-    whatsapp: '919999999999',
-    location: 'Delhi, India',
+  const [settings, setSettings] = useState(() => {
+    try {
+      const saved = localStorage.getItem('dm_settings');
+      if (saved) return JSON.parse(saved);
+    } catch (e) {}
+    return {
+      siteName: 'DigiMantra',
+      tagline: 'Building Websites That Grow Businesses.',
+      phone: '+91 9999 999 999',
+      email: 'hello@digimantra.in',
+      instagram: 'https://instagram.com/digimantra.in',
+      whatsapp: '919999999999',
+      location: 'Delhi, India',
+    };
   });
   const [saved, setSaved] = useState(false);
 

@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FiArrowUp } from 'react-icons/fi';
+import { getSiteSettings } from '../../data/defaultSettings';
 
-const WHATSAPP_URL = 'https://wa.me/919999999999?text=Hi DigiMantra, I need a website!';
+const { whatsapp } = getSiteSettings();
+const WHATSAPP_URL = `https://wa.me/${whatsapp}?text=Hi DigiMantra, I need a website!`;
 const SCROLL_THRESHOLD = 300;
 
 export default function FloatingCTA() {

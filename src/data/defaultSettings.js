@@ -2,11 +2,11 @@
 export const defaultSettings = {
   siteName: 'DigiMantra',
   tagline: 'Building Websites That Grow Businesses.',
-  phone: '+91 9999 999 999',
-  phoneRaw: '919999999999',
-  email: 'hello@digimantra.in',
-  instagram: 'https://instagram.com/digimantra.in',
-  whatsapp: '919999999999',
+  phone: '+91 9310 575 998',
+  phoneRaw: '919310575998',
+  email: 'amansharma.aslink@gmail.com',
+  instagram: 'https://instagram.com/DIGIMANTRA.AGENCY',
+  whatsapp: '919310575998',
   location: 'Delhi, India',
 };
 

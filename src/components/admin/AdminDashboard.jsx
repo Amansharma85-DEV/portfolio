@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { projects as initialProjects } from '../../data/projects';
 import { testimonials as initialTestimonials } from '../../data/testimonials';
 import { faqs as initialFaqs, pricing as initialPricing } from '../../data/siteData';
+import { getSiteSettings } from '../../data/defaultSettings';
 import {
   FiGrid, FiFolder, FiStar, FiDollarSign, FiHelpCircle,
   FiSettings, FiLogOut, FiPlus, FiEdit2, FiTrash2,
@@ -73,6 +74,7 @@ function Sidebar({ active, setActive, onLogout }) {
 
 // --- Overview Panel ---
 function OverviewPanel({ projects }) {
+  const { whatsapp } = getSiteSettings();
   const stats = [
     { label: 'Total Projects', value: projects.length, icon: <FiFolder size={20} />, color: '#7c3aed' },
     { label: 'Featured Projects', value: projects.filter(p => p.featured).length, icon: <FiStar size={20} />, color: '#f59e0b' },
@@ -118,8 +120,8 @@ function OverviewPanel({ projects }) {
                 {s.icon}
               </div>
             </div>
-            <div style={{ fontSize: '28px', fontWeight: 800, color: 'white', fontFamily: 'Syne, sans-serif' }}>{s.value}</div>
-            <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', fontFamily: 'Outfit, sans-serif', marginTop: '4px' }}>{s.label}</div>
+            <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', fontFamily: 'Outfit, sans-serif' }}>{s.label}</div>
+            <div style={{ fontSize: '28px', fontWeight: 800, color: 'white', fontFamily: 'Syne, sans-serif', marginTop: '4px' }}>{s.value}</div>
           </motion.div>
         ))}
       </div>
@@ -132,7 +134,7 @@ function OverviewPanel({ projects }) {
         <a href="/" target="_blank" className="btn-secondary" style={{ fontSize: '13px', padding: '10px 18px', textDecoration: 'none' }}>
           <FiExternalLink size={14} /> View Portfolio
         </a>
-        <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ fontSize: '13px', padding: '10px 18px', textDecoration: 'none', color: '#25d366', borderColor: 'rgba(37,211,102,0.3)' }}>
+        <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ fontSize: '13px', padding: '10px 18px', textDecoration: 'none', color: '#25d366', borderColor: 'rgba(37,211,102,0.3)' }}>
           💬 WhatsApp Business
         </a>
       </div>
@@ -417,10 +419,10 @@ function SettingsPanel() {
     return {
       siteName: 'DigiMantra',
       tagline: 'Building Websites That Grow Businesses.',
-      phone: '+91 9999 999 999',
-      email: 'hello@digimantra.in',
-      instagram: 'https://instagram.com/digimantra.in',
-      whatsapp: '919999999999',
+      phone: '+91 9310 575 998',
+      email: 'amansharma.aslink@gmail.com',
+      instagram: 'https://instagram.com/DIGIMANTRA.AGENCY',
+      whatsapp: '919310575998',
       location: 'Delhi, India',
     };
   });

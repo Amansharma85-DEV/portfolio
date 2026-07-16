@@ -151,7 +151,7 @@ export default function FAQ() {
                 onMouseEnter={e => e.currentTarget.style.background = 'rgba(124,58,237,0.15)'}
                 onMouseLeave={e => e.currentTarget.style.background = 'rgba(124,58,237,0.08)'}
               >
-                📧 hello@digimantra.in
+                📧 {email}
               </a>
             </div>
           </motion.div>

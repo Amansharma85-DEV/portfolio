@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowUp, FiInstagram, FiMail, FiPhone } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -17,16 +18,17 @@ const footerLinks = {
   ],
 };
 
-const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-const scrollToSection = (href) => {
-  if (href.startsWith('#')) {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    window.location.href = href;
-  }
-};
-
 export default function Footer() {
+  const navigate = useNavigate();
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToSection = (href) => {
+    if (href.startsWith('#')) {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate(href);
+    }
+  };
   return (
     <footer style={{
       background: 'rgba(3, 3, 8, 0.98)',

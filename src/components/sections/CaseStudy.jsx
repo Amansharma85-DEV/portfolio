@@ -71,7 +71,7 @@ export default function CaseStudy() {
               position: 'relative',
             }}>
               <img
-                src="/assets/images/food-website.jpeg"
+                src={`${import.meta.env.BASE_URL}assets/images/food-website.jpeg`}
                 alt="Swadeshi Kitchen Website"
                 style={{ width: '100%', display: 'block', objectFit: 'cover' }}
                 onError={e => { e.target.src = `https://placehold.co/700x500/0a0a14/f97316?text=Swadeshi+Kitchen`; }}

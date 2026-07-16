@@ -79,7 +79,7 @@ function ProjectCard({ project }) {
         style={{ position: 'relative', aspectRatio: '16/10', overflow: 'hidden' }}
       >
         <img
-          src={imgError ? `https://placehold.co/800x500/0a0a14/7c3aed?text=${encodeURIComponent(project.title)}` : project.image}
+          src={imgError ? `https://placehold.co/800x500/0a0a14/7c3aed?text=${encodeURIComponent(project.title)}` : (project.image && project.image.startsWith('/') ? `${import.meta.env.BASE_URL.slice(0, -1)}${project.image}` : project.image)}
           alt={project.title}
           onError={handleImgError}
           style={{

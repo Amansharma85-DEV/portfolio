@@ -143,7 +143,7 @@ export default function ProjectDetail() {
                 }}
               >
                 <img
-                  src={project.image}
+                  src={project.image && project.image.startsWith('/') ? `${import.meta.env.BASE_URL.slice(0, -1)}${project.image}` : project.image}
                   alt={project.title}
                   style={{ width: '100%', display: 'block', objectFit: 'cover' }}
                   onError={e => { e.target.src = `https://placehold.co/700x450/0a0a14/7c3aed?text=${encodeURIComponent(project.title)}`; }}

@@ -58,7 +58,7 @@ export default function About() {
               }}
             >
               <img
-                src="/aman-sharma.jpg"
+                src={`${import.meta.env.BASE_URL}aman-sharma.jpg`}
                 alt="Aman Sharma - DigiMantra Founder"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
                 onError={(e) => {

@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { projects } from '../data/projects';
+import { getProjects } from '../data/projects';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { FiArrowLeft, FiExternalLink, FiGithub, FiCheck } from 'react-icons/fi';
@@ -9,8 +9,7 @@ export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const project = (() => {
-    const saved = localStorage.getItem('dm_projects');
-    const projectList = saved ? JSON.parse(saved) : projects;
+    const projectList = getProjects();
     return projectList.find((p) => p.id === Number(id));
   })();
 

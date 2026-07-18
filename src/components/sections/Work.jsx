@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiSearch, FiGithub, FiExternalLink } from 'react-icons/fi';
-import { projects } from '../../data/projects';
+import { getProjects } from '../../data/projects';
 
 /* ─── animation variants ─────────────────────────────────────── */
 const containerVariants = {
@@ -400,10 +400,7 @@ export default function Work() {
 
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
-  const [localProjects] = useState(() => {
-    const saved = localStorage.getItem('dm_projects');
-    return saved ? JSON.parse(saved) : projects;
-  });
+  const [localProjects] = useState(() => getProjects());
 
   /* derive tab labels */
   const allCategories = ['All', ...new Set(localProjects.map((p) => p.category))];

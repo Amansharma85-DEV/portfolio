@@ -19,6 +19,8 @@ export const projects = [
     results: ["Premium Brand Identity", "Mobile-First Design", "Fast Loading"],
     challenge: "Creating a luxury feel while maintaining performance on mobile devices.",
     solution: "Used optimized images, lazy loading, and CSS animations to deliver a premium experience.",
+    challenge_desc: "Creating a luxury feel while maintaining performance on mobile devices.",
+    solution_desc: "Used optimized images, lazy loading, and CSS animations to deliver a premium experience."
   },
   {
     id: 2,
@@ -100,6 +102,47 @@ export const projects = [
     challenge: "Creating a digital presence for a home-based food business on a budget.",
     solution: "Simple but effective website with clear CTAs and WhatsApp integration for instant ordering.",
   },
+  {
+    id: 6,
+    title: "Elite Fitness Club",
+    category: "Gym",
+    client: "Elite Fitness",
+    description: "A premium luxury fitness club website featuring state-of-the-art equipment showcase, professional personal trainers profiles, personalized nutrition options, and interactive fitness features.",
+    shortDesc: "Premium luxury gym & fitness website with modern dark aesthetic",
+    image: "/assets/images/elite-fitness.png",
+    video: "",
+    github: "https://github.com/amansharma85-dev/gym",
+    liveDemo: "https://amansharma85-dev.github.io/gym/",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "JavaScript"],
+    features: ["Trainer Profiles", "Membership Plans", "Nutrition Guide", "Responsive Layout", "Modern Dark UI"],
+    completedDate: "2024",
+    status: "Completed",
+    featured: true,
+    results: ["Premium UX/UI", "High Loading Speed", "Interactive Layout"],
+    challenge: "Developing a highly visual and premium feel that matches a luxury fitness club brand.",
+    solution: "Used Next.js with optimized assets, a deep dark mode design, and smooth animations using Framer Motion."
+  }
 ];
 
-export const categories = ["All", "Restaurant", "Clinic", "Fashion eCommerce", "eCommerce"];
+export const categories = ["All", "Restaurant", "Clinic", "Fashion eCommerce", "eCommerce", "Gym"];
+
+export function getProjects() {
+  const saved = localStorage.getItem('dm_projects');
+  if (!saved) {
+    localStorage.setItem('dm_projects', JSON.stringify(projects));
+    return projects;
+  }
+  try {
+    const savedProjects = JSON.parse(saved);
+    // Find default projects that are not in savedProjects by ID
+    const missing = projects.filter(dp => !savedProjects.some(sp => sp.id === dp.id));
+    if (missing.length > 0) {
+      const merged = [...savedProjects, ...missing];
+      localStorage.setItem('dm_projects', JSON.stringify(merged));
+      return merged;
+    }
+    return savedProjects;
+  } catch (e) {
+    return projects;
+  }
+}

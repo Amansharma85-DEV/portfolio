@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
-import { projects as initialProjects } from '../../data/projects';
+import { getProjects } from '../../data/projects';
 import { testimonials as initialTestimonials } from '../../data/testimonials';
 import { faqs as initialFaqs, pricing as initialPricing } from '../../data/siteData';
 import { getSiteSettings } from '../../data/defaultSettings';
@@ -465,10 +465,7 @@ function SettingsPanel() {
 export default function AdminDashboard() {
   const navigate = useNavigate();
   const [active, setActive] = useState('overview');
-  const [projects, setProjects] = useState(() => {
-    const saved = localStorage.getItem('dm_projects');
-    return saved ? JSON.parse(saved) : initialProjects;
-  });
+  const [projects, setProjects] = useState(() => getProjects());
   const [testimonials, setTestimonials] = useState(() => {
     const saved = localStorage.getItem('dm_testimonials');
     return saved ? JSON.parse(saved) : initialTestimonials;

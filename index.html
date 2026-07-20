@@ -1,40 +1,651 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="DigiMantra - We build fast, modern, SEO-friendly websites that help businesses increase sales and establish a strong online presence. Premium web design agency." />
-    <meta name="keywords" content="web design, web development, digital agency, SEO, ecommerce, restaurant website, clinic website, DigiMantra" />
-    <meta name="author" content="DigiMantra" />
-    <meta property="og:title" content="DigiMantra - Building Websites That Grow Businesses" />
-    <meta property="og:description" content="Premium web design & development agency. We create stunning websites that convert visitors into customers." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "DigiMantra",
-      "description": "Premium web design and development agency",
-      "url": "https://digimantra.in",
-      "telephone": "+91-9999999999",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Delhi",
-        "addressCountry": "IN"
-      },
-      "serviceType": "Web Design & Development"
-    }
-    </script>
-    <title>DigiMantra — Building Websites That Grow Businesses</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigiMantra | Premium Futuristic Portfolio</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Aman Sharma - DigiMantra. Premium website design, AI automation, and custom development services to grow your business.">
+  <meta name="keywords" content="web developer, AI automation, portfolio, software engineer, next.js developer, green cyberpunk, tech lead">
+  <meta name="author" content="Aman Sharma">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- 1. Scroll Progress Bar -->
+  <div class="scroll-progress-bar"></div>
+
+  <!-- 2. Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- 3. Preloader -->
+  <div class="loader-wrapper">
+    <div class="loader-ring"></div>
+    <div class="loader-text">Initializing Systems</div>
+  </div>
+
+  <!-- 4. Parallax Glow Orbs -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- 5. Sticky Glassmorphism Header/Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo hoverable">
+        <span>&lt;</span>DigiMantra<span>/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero" class="hoverable">Home</a></li>
+        <li><a href="#stats" class="hoverable">Overview</a></li>
+        <li><a href="#services" class="hoverable">Services</a></li>
+        <li><a href="#projects" class="hoverable">Work</a></li>
+        <li><a href="#skills" class="hoverable">Skills</a></li>
+        <li><a href="#about" class="hoverable">About</a></li>
+        <li><a href="#contact" class="hoverable nav-cta">Get Started</a></li>
+      </ul>
+      <button class="hamburger hoverable" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 1. HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content reveal active">
+          <div class="hero-tag">
+            <span></span> AI-Powered Engineering
+          </div>
+          <h1 class="hero-title">
+            Building Websites That <br>
+            <span class="gradient-text">Grow Businesses.</span>
+          </h1>
+          <div class="hero-subtitle-container">
+            <span id="typewriter"></span>
+          </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary hoverable">View Our Work <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#contact" class="btn-secondary hoverable">Book Free Consultation</a>
+          </div>
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <div class="hero-stat-num counter-anim" data-target="50" data-suffix="+">0</div>
+              <div class="hero-stat-label">Projects Completed</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num counter-anim" data-target="30" data-suffix="+">0</div>
+              <div class="hero-stat-label">Happy Clients</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num counter-anim" data-target="98" data-suffix="%">0</div>
+              <div class="hero-stat-label">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual reveal active">
+          <!-- Animated Floating Code Editor Mockup -->
+          <div class="code-editor tilt-card">
+            <div class="editor-header">
+              <div class="editor-dots">
+                <span class="editor-dot red"></span>
+                <span class="editor-dot yellow"></span>
+                <span class="editor-dot green"></span>
+              </div>
+              <span class="editor-title">collaboration_engine.js</span>
+              <div style="width: 32px;"></div>
+            </div>
+            <div class="editor-body">
+              <!-- Content typing generated dynamically via JS -->
+            </div>
+          </div>
+          
+          <!-- Floating Hero Chips -->
+          <div class="floating-chips">
+            <div class="floating-chip chip-1">
+              <span>⚡</span> Fast Performance
+            </div>
+            <div class="floating-chip chip-2">
+              <span>🤖</span> Smart Automation
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. STATS SECTION -->
+  <section id="stats" class="reveal">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="glass-card stat-card tilt-card hoverable">
+          <div class="stat-icon"><i class="fa-solid fa-laptop-code fa-lg"></i></div>
+          <div class="stat-num counter-anim" data-target="50" data-suffix="+">0</div>
+          <div class="stat-label">Active Deployments</div>
+        </div>
+        <div class="glass-card stat-card tilt-card hoverable">
+          <div class="stat-icon"><i class="fa-solid fa-face-smile fa-lg"></i></div>
+          <div class="stat-num counter-anim" data-target="100" data-suffix="%">0</div>
+          <div class="stat-label">Satisfaction Rate</div>
+        </div>
+        <div class="glass-card stat-card tilt-card hoverable">
+          <div class="stat-icon"><i class="fa-solid fa-truck-fast fa-lg"></i></div>
+          <div class="stat-num counter-anim" data-target="7" data-suffix=" Days">0</div>
+          <div class="stat-label">Average Delivery Time</div>
+        </div>
+        <div class="glass-card stat-card tilt-card hoverable">
+          <div class="stat-icon"><i class="fa-solid fa-brain fa-lg"></i></div>
+          <div class="stat-num counter-anim" data-target="12" data-suffix=" Systems">0</div>
+          <div class="stat-label">AI Automations Installed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SERVICES SECTION -->
+  <section id="services" class="reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;What We Offer/&gt;</span>
+        <h2 class="section-title">Futuristic <span class="gradient-text">Services</span></h2>
+      </div>
+      <div class="services-grid">
+        <div class="glass-card service-card tilt-card hoverable">
+          <div class="service-icon"><i class="fa-solid fa-code fa-lg"></i></div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-desc">Ultra-responsive, blazing fast, custom websites engineered to deliver a flawless experience across all devices.</p>
+        </div>
+        <div class="glass-card service-card tilt-card hoverable">
+          <div class="service-icon"><i class="fa-solid fa-layer-group fa-lg"></i></div>
+          <h3 class="service-title">Full Stack Solutions</h3>
+          <p class="service-desc">End-to-end applications built with secure, robust backend structures integrated with futuristic frontends.</p>
+        </div>
+        <div class="glass-card service-card tilt-card hoverable">
+          <div class="service-icon"><i class="fa-solid fa-robot fa-lg"></i></div>
+          <h3 class="service-title">AI Implementations</h3>
+          <p class="service-desc">Integrating cutting-edge AI features, models, and smart workflows directly into your digital workspace.</p>
+        </div>
+        <div class="glass-card service-card tilt-card hoverable">
+          <div class="service-icon"><i class="fa-solid fa-bezier-curve fa-lg"></i></div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-desc">Immersive interactive digital designs focused on intuitive navigation, aesthetics, and high conversion rate.</p>
+        </div>
+        <div class="glass-card service-card tilt-card hoverable">
+          <div class="service-icon"><i class="fa-solid fa-gears fa-lg"></i></div>
+          <h3 class="service-title">Workflow Automation</h3>
+          <p class="service-desc">Connecting APIs and building custom scripts to automate repetitive tasks and optimize business pipelines.</p>
+        </div>
+        <div class="glass-card service-card tilt-card hoverable">
+          <div class="service-icon"><i class="fa-solid fa-wrench fa-lg"></i></div>
+          <h3 class="service-title">Maintenance &amp; Support</h3>
+          <p class="service-desc">Continuous monitoring, speed optimization, and regular security updates to keep your systems running 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHY CHOOSE ME SECTION -->
+  <section id="why" class="reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;Why Choose Us/&gt;</span>
+        <h2 class="section-title">Beyond standard <span class="gradient-text">code</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="glass-card why-card hoverable">
+          <div class="why-num">01</div>
+          <h3 class="why-title">Clean Coding Architecture</h3>
+          <p class="why-desc">No messy legacy code. We build modules that are scalable, easy to read, and engineered to last.</p>
+        </div>
+        <div class="glass-card why-card hoverable">
+          <div class="why-num">02</div>
+          <h3 class="why-title">Lightning Speed Optimization</h3>
+          <p class="why-desc">We target 95+ score on Google Lighthouse by compressing assets and implementing advanced lazy loading.</p>
+        </div>
+        <div class="glass-card why-card hoverable">
+          <div class="why-num">03</div>
+          <h3 class="why-title">Seamless Business Integration</h3>
+          <p class="why-desc">We connect your website directly to your WhatsApp, calendars, analytics, or CRMs without manual overhead.</p>
+        </div>
+        <div class="glass-card why-card hoverable">
+          <div class="why-num">04</div>
+          <h3 class="why-title">Proactive Customer Support</h3>
+          <p class="why-desc">Friendly technical specialists available to assist and monitor your system performance anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FEATURED PROJECTS SECTION -->
+  <section id="projects" class="reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;Our Portfolio/&gt;</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
+      </div>
+      <div class="projects-grid">
+        
+        <!-- Project 1 -->
+        <div class="glass-card project-card hoverable">
+          <div class="project-image-container">
+            <img src="./public/assets/images/glamora-fashion.jpeg" alt="Glamora Luxury Fashion" onerror="this.src='https://placehold.co/600x400/0a1a0a/22C55E?text=Glamora+Fashion'">
+            <div class="project-badges">
+              <span class="project-badge">Featured</span>
+              <span class="project-badge">eCommerce</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Glamora Fashion</h3>
+            <p class="project-desc">A premium luxury fashion eCommerce platform featuring an elegant dark UI, real-time filtering, shopping cart, and seamless checkout.</p>
+            <div class="project-tech">
+              <span class="project-tech-pill">React</span>
+              <span class="project-tech-pill">Tailwind CSS</span>
+              <span class="project-tech-pill">Framer Motion</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://amansharma85-dev.github.io/glamora-fashion/" target="_blank" class="btn-primary hoverable"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            <a href="https://github.com/amansharma85-dev/glamora-fashion" target="_blank" class="btn-secondary hoverable"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card project-card hoverable">
+          <div class="project-image-container">
+            <img src="./public/assets/images/clinic-website.jpeg" alt="Aura Skin Clinic" onerror="this.src='https://placehold.co/600x400/0a1a0a/22C55E?text=Aura+Clinic'">
+            <div class="project-badges">
+              <span class="project-badge">Featured</span>
+              <span class="project-badge">Clinic</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Aura Skin Clinic</h3>
+            <p class="project-desc">Professional dermatology clinic website with online booking system, cataloged treatments list, and integrated WhatsApp chat CTA.</p>
+            <div class="project-tech">
+              <span class="project-tech-pill">HTML5</span>
+              <span class="project-tech-pill">Vanilla CSS</span>
+              <span class="project-tech-pill">JavaScript</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://amansharma85-dev.github.io/clinic/" target="_blank" class="btn-primary hoverable"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            <a href="https://github.com/amansharma85-dev/clinic" target="_blank" class="btn-secondary hoverable"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card project-card hoverable">
+          <div class="project-image-container">
+            <img src="./public/assets/images/elite-fitness.png" alt="Elite Fitness Club" onerror="this.src='https://placehold.co/600x400/0a1a0a/22C55E?text=Elite+Fitness'">
+            <div class="project-badges">
+              <span class="project-badge">Featured</span>
+              <span class="project-badge">Fitness</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Elite Fitness Club</h3>
+            <p class="project-desc">A high-end luxury gym site featuring trainers profiles, personalized diet trackers, membership plans, and visual statistics dashboards.</p>
+            <div class="project-tech">
+              <span class="project-tech-pill">Next.js</span>
+              <span class="project-tech-pill">Tailwind CSS</span>
+              <span class="project-tech-pill">Framer Motion</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://amansharma85-dev.github.io/gym/" target="_blank" class="btn-primary hoverable"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            <a href="https://github.com/amansharma85-dev/gym" target="_blank" class="btn-secondary hoverable"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SKILLS SECTION -->
+  <section id="skills" class="reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;Tech Spectrum/&gt;</span>
+        <h2 class="section-title">Engineered <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+        
+        <!-- Front-end -->
+        <div class="skills-column">
+          <h3 class="skills-header">Frontend</h3>
+          <ul class="skills-list">
+            <li class="skill-item hoverable"><span>React / Next.js</span> <i class="fa-brands fa-react" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>JavaScript</span> <i class="fa-brands fa-square-js" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>Tailwind CSS</span> <i class="fa-solid fa-wind" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>Framer Motion</span> <i class="fa-solid fa-circle-nodes" style="color:#22C55E;"></i></li>
+          </ul>
+        </div>
+
+        <!-- Back-end -->
+        <div class="skills-column">
+          <h3 class="skills-header">Backend</h3>
+          <ul class="skills-list">
+            <li class="skill-item hoverable"><span>Node.js / Express</span> <i class="fa-brands fa-node-js" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>RESTful APIs</span> <i class="fa-solid fa-network-wired" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>Serverless Apps</span> <i class="fa-solid fa-bolt" style="color:#22C55E;"></i></li>
+          </ul>
+        </div>
+
+        <!-- Databases -->
+        <div class="skills-column">
+          <h3 class="skills-header">Database</h3>
+          <ul class="skills-list">
+            <li class="skill-item hoverable"><span>MongoDB</span> <i class="fa-solid fa-leaf" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>PostgreSQL</span> <i class="fa-solid fa-database" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>Redis Cache</span> <i class="fa-solid fa-server" style="color:#22C55E;"></i></li>
+          </ul>
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="skills-column">
+          <h3 class="skills-header">Cloud</h3>
+          <ul class="skills-list">
+            <li class="skill-item hoverable"><span>GitHub Actions</span> <i class="fa-brands fa-github" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>AWS Cloud</span> <i class="fa-brands fa-aws" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>Vercel / Netlify</span> <i class="fa-solid fa-cloud-arrow-up" style="color:#22C55E;"></i></li>
+          </ul>
+        </div>
+
+        <!-- Artificial Intelligence -->
+        <div class="skills-column">
+          <h3 class="skills-header">AI &amp; Automation</h3>
+          <ul class="skills-list">
+            <li class="skill-item hoverable"><span>OpenAI Integration</span> <i class="fa-solid fa-brain" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>Claude API</span> <i class="fa-solid fa-microchip" style="color:#22C55E;"></i></li>
+            <li class="skill-item hoverable"><span>Custom AI Agents</span> <i class="fa-solid fa-robot" style="color:#22C55E;"></i></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. WORK PROCESS SECTION -->
+  <section id="process" class="reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;Roadmap/&gt;</span>
+        <h2 class="section-title">Work <span class="gradient-text">Process</span></h2>
+      </div>
+      <div class="process-grid">
+        
+        <div class="glass-card process-card hoverable">
+          <span class="process-step">Step 01</span>
+          <h3 class="process-title">Consultation</h3>
+          <p class="process-desc">Deep diving into your requirements, brand aesthetic, target audience, and business conversion goals.</p>
+        </div>
+
+        <div class="glass-card process-card hoverable">
+          <span class="process-step">Step 02</span>
+          <h3 class="process-title">UI/UX Design</h3>
+          <p class="process-desc">Creating wireframes and fully realized interactive high-fidelity dark/futuristic prototypes for review.</p>
+        </div>
+
+        <div class="glass-card process-card hoverable">
+          <span class="process-step">Step 03</span>
+          <h3 class="process-title">Architecture Setup</h3>
+          <p class="process-desc">Initializing codebases with performant stacks (like Next.js) and planning standard database endpoints.</p>
+        </div>
+
+        <div class="glass-card process-card hoverable">
+          <span class="process-step">Step 04</span>
+          <h3 class="process-title">Execution</h3>
+          <p class="process-desc">Writing high-speed scalable codebase modules, styling cards, and implementing parallax scroll animations.</p>
+        </div>
+
+        <div class="glass-card process-card hoverable">
+          <span class="process-step">Step 05</span>
+          <h3 class="process-title">QA &amp; Optimization</h3>
+          <p class="process-desc">Rigorous multi-device rendering checks, speed audit optimization, and security firewall settings.</p>
+        </div>
+
+        <div class="glass-card process-card hoverable">
+          <span class="process-step">Step 06</span>
+          <h3 class="process-title">Deployment</h3>
+          <p class="process-desc">Launching the live product onto secure cloud networks and integrating automated CI/CD backup schedules.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. TESTIMONIALS SECTION -->
+  <section id="testimonials" class="reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;Social Proof/&gt;</span>
+        <h2 class="section-title">Client <span class="gradient-text">Reviews</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        
+        <!-- Card 1 -->
+        <div class="glass-card testimonial-card hoverable">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">"DigiMantra built our luxury fashion storefront within a week. The UI and animation is extremely clean and our orders increased by 40% immediately!"</p>
+          <div class="testimonial-profile">
+            <div class="testimonial-avatar">GF</div>
+            <div class="testimonial-info">
+              <span class="testimonial-name">Sarah Jenkins</span>
+              <span class="testimonial-company">Glamora Fashion</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card testimonial-card hoverable">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Outstanding service! The appointment system works flawlessly, and patient bookings are now fully automated via their custom WhatsApp engine."</p>
+          <div class="testimonial-profile">
+            <div class="testimonial-avatar">AC</div>
+            <div class="testimonial-info">
+              <span class="testimonial-name">Dr. Rohit Mehta</span>
+              <span class="testimonial-company">Aura Skin Clinic</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card testimonial-card hoverable">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">"They designed our agency website with cutting-edge visual elements that immediately wow everyone who enters. Their speed optimization is stellar."</p>
+          <div class="testimonial-profile">
+            <div class="testimonial-avatar">NT</div>
+            <div class="testimonial-info">
+              <span class="testimonial-name">Alex Carter</span>
+              <span class="testimonial-company">Nexus Tech</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. ABOUT ME SECTION -->
+  <section id="about" class="reveal">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-image-wrapper">
+            <div class="about-image-placeholder">
+              <i class="fa-solid fa-user-astronaut fa-4x"></i>
+              <span style="font-family: var(--font-code); font-size: 13px;">Aman Sharma</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-bio">
+          <span class="section-tag">&lt;About DigiMantra/&gt;</span>
+          <h2 class="section-title">Architecting the <span class="gradient-text">Future</span></h2>
+          <p>We are a high-end web engineering agency dedicated to creating futuristic, high-performance, and conversion-optimized websites for small businesses, startups, and personal brands. Led by Lead Engineer Aman Sharma, we build everything with extreme precision.</p>
+          <p>By blending modern design systems, fluid motion parameters, and smart workflow automations, we construct digital spaces that make your business look world-class while functioning with automatic efficiency.</p>
+          <div class="about-actions">
+            <a href="https://wa.me/919310575998" target="_blank" class="btn-primary hoverable">Hire DigiMantra Now</a>
+            <a href="https://amansharma85-dev.github.io/portfolio/assets/files/resume.pdf" download class="btn-secondary hoverable"><i class="fa-solid fa-download"></i> Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CONTACT SECTION -->
+  <section id="contact" class="reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;Initiate Connection/&gt;</span>
+        <h2 class="section-title">Let's Build <span class="gradient-text">Together</span></h2>
+      </div>
+      <div class="contact-grid">
+        
+        <div class="contact-info">
+          <h3 style="font-family: var(--font-headings); font-size: 24px; font-weight: 700;">Direct Access Channels</h3>
+          <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">Have a project idea? Connect immediately via our priority channels or fill out the form for response within 2 hours.</p>
+          
+          <a href="https://wa.me/919310575998?text=Hi%20DigiMantra,%20I'd%20like%20to%20build%20a%20website!" target="_blank" class="glass-card contact-card hoverable">
+            <div class="contact-card-icon"><i class="fa-brands fa-whatsapp fa-xl"></i></div>
+            <div class="contact-card-details">
+              <span class="contact-card-label">WhatsApp Channel</span>
+              <span class="contact-card-value">+91 9310 575 998</span>
+            </div>
+          </a>
+
+          <a href="mailto:amansharma.aslink@gmail.com" class="glass-card contact-card hoverable">
+            <div class="contact-card-icon"><i class="fa-regular fa-envelope fa-xl"></i></div>
+            <div class="contact-card-details">
+              <span class="contact-card-label">Email Address</span>
+              <span class="contact-card-value">amansharma.aslink@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/DIGIMANTRA.AGENCY" target="_blank" class="glass-card contact-card hoverable">
+            <div class="contact-card-icon"><i class="fa-brands fa-instagram fa-xl"></i></div>
+            <div class="contact-card-details">
+              <span class="contact-card-label">Instagram Handle</span>
+              <span class="contact-card-value">@DIGIMANTRA.AGENCY</span>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="glass-card contact-form-card">
+          <form id="collaboration-form" style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="form-group">
+              <label class="form-label" for="form-name">Name</label>
+              <input type="text" id="form-name" class="form-input hoverable" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-email">Email</label>
+              <input type="email" id="form-email" class="form-input hoverable" placeholder="you@domain.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-subject">Project Goal</label>
+              <input type="text" id="form-subject" class="form-input hoverable" placeholder="e.g. Luxury Gym Website" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-msg">Specifications</label>
+              <textarea id="form-msg" class="form-textarea hoverable" placeholder="Details about your timeline, feature specs, and design goals..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary hoverable" style="margin-top: 10px; justify-content: center;">
+              Send Encrypted Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="logo hoverable">
+            <span>&lt;</span>DigiMantra<span>/&gt;</span>
+          </a>
+          <p>Engineering premium futuristic digital storefronts and AI workflow automations to help modern businesses grow.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/919310575998" target="_blank" class="social-icon hoverable" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com/DIGIMANTRA.AGENCY" target="_blank" class="social-icon hoverable" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:amansharma.aslink@gmail.com" class="social-icon hoverable" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#hero" class="hoverable">Home</a></li>
+            <li><a href="#stats" class="hoverable">Overview</a></li>
+            <li><a href="#projects" class="hoverable">Work Showcase</a></li>
+            <li><a href="#about" class="hoverable">About DigiMantra</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services" class="hoverable">Web Development</a></li>
+            <li><a href="#services" class="hoverable">Full Stack Systems</a></li>
+            <li><a href="#services" class="hoverable">AI Implementations</a></li>
+            <li><a href="#services" class="hoverable">UI/UX Design</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Contact Details</h4>
+          <ul class="footer-links" style="pointer-events: none;">
+            <li style="color: var(--text-secondary); font-size: 13px;"><i class="fa-solid fa-map-pin" style="color:var(--secondary-accent); margin-right: 8px;"></i> Delhi, India</li>
+            <li style="color: var(--text-secondary); font-size: 13px;"><i class="fa-solid fa-phone" style="color:var(--secondary-accent); margin-right: 8px;"></i> +91 9310 575 998</li>
+            <li style="color: var(--text-secondary); font-size: 13px;"><i class="fa-solid fa-envelope" style="color:var(--secondary-accent); margin-right: 8px;"></i> amansharma.aslink@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 DigiMantra. All Rights Reserved. Built with Precision.</span>
+        <span>Designed for Premium Businesses</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top hoverable" aria-label="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script type="module" src="./script.js"></script>
+
+</body>
 </html>

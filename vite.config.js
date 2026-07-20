@@ -1,14 +1,9 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 export default defineConfig({
   base: '/portfolio/',
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
+  plugins: [],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -16,7 +11,8 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      output: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
       },
     },
   },
